@@ -1,10 +1,10 @@
 {
   "name": "vittinderbackend",
   "version": "1.0.0",
-  "main": "./src/index.js",
+  "main": "./src/app.js",
   "module": "commonjs",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon .js"
   
   },
   "keywords": [],
