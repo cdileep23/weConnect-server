@@ -11,7 +11,7 @@ ProfileRouter.get('/profile/view',userAuth,async (req,res)=>{
         const user=req.user;
         res.status(200).json({success:true,user:user})
     } catch (error) {
-        res.status(400).send("ERROR : " + error.message);
+        res.status(401).send("ERROR : " + error.message);
     }
 
 })
@@ -22,7 +22,7 @@ ProfileRouter.patch('/profile/edit', userAuth, async (req, res) => {
       }
   
       const loggedInUser = req.user;
-  
+     console.log(req.body.skills)
       
       const updatedUser = await user.findByIdAndUpdate(
         loggedInUser._id,
