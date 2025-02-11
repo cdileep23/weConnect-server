@@ -17,7 +17,7 @@ userRouter.get('/user/connections',userAuth, async(req,res)=>{
             .populate("fromUserId",  ["firstName", "lastName", "about", "skills","age" ,"photoUrl"])
             .populate("toUserId",  ["firstName", "lastName", "about", "skills", "age","photoUrl"]);
       
-          console.log(connectionRequests);
+      
       
           const data = connectionRequests.map((row) => {
             if (row.fromUserId._id.toString() === loggedInUser._id.toString()) {
@@ -69,7 +69,7 @@ userRouter.get('/user/feed', userAuth, async(req,res)=>{
       hidenfromfeed.add(req.fromUserId.toString());
     })
 
-    console.log(hidenfromfeed)
+   
 
     const users = await user.find({
       $and: [

@@ -22,7 +22,7 @@ ProfileRouter.patch('/profile/edit', userAuth, async (req, res) => {
       }
   
       const loggedInUser = req.user;
-     console.log(req.body.skills)
+   
       
       const updatedUser = await user.findByIdAndUpdate(
         loggedInUser._id,
